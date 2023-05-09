@@ -1,0 +1,29 @@
+version: '3'
+services:
+    python.web:
+        container_name: 'python-web'
+        build:
+            context: .
+            dockerfile: Dockerfile
+        # ports:
+        #     - '${APP_PORT:-80}:80'
+        volumes:
+            - '.:/python-docker'
+        networks:
+            - python_net
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.2'
+                    memory: 200M
+        # depends_on:
+        #     - vistadash.redis
+        #     #- vistadash.dev_db01_clone
+        #     # - vistadash.dev_db01
+        #     - vistadash.prod_db01_master
+        #     - vistadash.local_db01_clone
+
+networks:
+    python_net:
+        driver: bridge
+
