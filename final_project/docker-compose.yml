@@ -16,12 +16,6 @@ services:
                 limits:
                     cpus: '0.2'
                     memory: 200M
-        # depends_on:
-        #     - vistadash.redis
-        #     #- vistadash.dev_db01_clone
-        #     # - vistadash.dev_db01
-        #     - vistadash.prod_db01_master
-        #     - vistadash.local_db01_clone
 
 networks:
     python_net:
